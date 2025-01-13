@@ -20,10 +20,15 @@ public class ChessMatch {
         }
         return mat;
     }
+    private void placeNewPiece(char column, char row, ChessPiece Piece){
+        board.PlacePiece(Piece, new ChessPosition(column, row ).toPosition());
+    }
+
     private void InitialSetup(){
-        board.PlacePiece(new Rook(board, Color.WHITE), new Position(2,1));
-        board.PlacePiece(new King(board, Color.BLACK), new Position(0, 4));
+      placeNewPiece('b', (char) 6, new Rook(board, Color.WHITE));
+      placeNewPiece('e', (char) 1, new King(board, Color.WHITE));
 
     }
+
 }
 

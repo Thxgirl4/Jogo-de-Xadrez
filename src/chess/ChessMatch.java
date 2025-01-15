@@ -28,6 +28,7 @@ public class ChessMatch {
       placeNewPiece('b', (char) 6, new Rook(board, Color.WHITE));
       placeNewPiece('e', (char) 1, new King(board, Color.WHITE));
 
+
     }
 
 }

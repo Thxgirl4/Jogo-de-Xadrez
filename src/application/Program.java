@@ -24,12 +24,17 @@ public class Program {
                 System.out.println("Source: ");
                 ChessPosition source = UI.readChessPosition(sc);
 
+                boolean [][] possibleMoves = ChessMatch.possibleMoves(source);
+                UI.clearScreen();
+                UI.printBoard(chess.ChessMatch.getPieces(), possibleMoves);
                 System.out.println();
                 System.out.println("Target: ");
                 ChessPosition target = UI.readChessPosition(sc);
 
+
                 ChessPiece capturedPiece = ChessMatch.performChessMove(source, target);
-        } catch (ChessException | InputMismatchException e) {
+
+            } catch (ChessException | InputMismatchException e) {
                 System.out.println(e.getMessage());
                 sc.nextLine();
             }

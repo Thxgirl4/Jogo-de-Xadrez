@@ -51,6 +51,11 @@ public class ChessMatch {
             throw new ChessException("the chosen piece can't move to target position");
         }
     }
+    public boolean [][] possibleMoves(ChessPosition sourcePosition){
+        Position position = sourcePosition.toPosition();
+        validateSourcePosition(position);
+        return board.piece(position).possibleMoves();
+    }
 
     private void InitialSetup(){
       placeNewPiece('b', (char) 6, new Rook(board, Color.WHITE));
